@@ -1,0 +1,40 @@
+package welcome
+
+import "github.com/ZafirProjects/portfolio/view/layout"
+import "github.com/ZafirProjects/portfolio/view/component"
+
+templ RenderWelcome() {
+	@layout.Base() {
+		<!--
+// v0 by Vercel.
+// https://v0.dev/t/MeTQYC5Hdy2
+-->
+		<main class="flex-1">
+			<section class="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+				<div class="flex flex-col items-center px-4 md:px-6 text-center gap-4 md:gap-10">
+					<div class="space-y-2">
+						<h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Hi, I'm Zafir</h1>
+						<p class="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							Welcome to my website. I built this using Go, Templ, Tailwind, and HTMX. I'm a software software developer. To learn more about me, click these buttons. 
+						</p>
+					</div>
+					<div class="flex gap-4 flex-col md:flex-row">
+						<a
+							class="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-sky-950 px-4 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+							href="#"
+						>
+							Let's Get Started
+						</a>
+						<a
+							class="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-slate-700 px-4 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+							href="#"
+						>
+							Download Resume
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		@component.Footer()
+	}
+}

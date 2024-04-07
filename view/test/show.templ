@@ -1,0 +1,16 @@
+package test
+
+import "github.com/ZafirProjects/portfolio/view/layout"
+
+templ Show(count string) {
+	@layout.Base() {
+		<div id="count" class="bg-teal-500 text-white">
+			@Count(count)
+		</div>
+		<button hx-post="/count" hx-target="#count" class="bg-lime-500 text-white">Count</button>
+	}
+}
+
+templ Count(count string) {
+	{ count }
+}
