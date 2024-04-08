@@ -23,7 +23,7 @@ func Header() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"px-4 lg:px-6 h-14 flex items-center bg-sky-950 text-white\"><a class=\"flex items-center justify-center hover:underline\" href=\"/\">Zafir Khan</a><nav class=\"ml-auto flex gap-4 sm:gap-6\"><a class=\"text-sm font-medium hover:underline underline-offset-4\" href=\"/experience\">Experience</a> <a class=\"text-sm font-medium hover:underline underline-offset-4\" href=\"/projects\">Projects</a> <a class=\"text-sm font-medium hover:underline underline-offset-4\" href=\"/contact\">Contact</a></nav></header>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"px-4 lg:px-6 h-14 flex items-center bg-sky-950 text-white\"><a class=\"flex items-center justify-center hover:underline\" href=\"/\">Zafir Khan</a><nav class=\"ml-auto flex gap-4 sm:gap-6\"><a class=\"text-sm font-medium hover:underline underline-offset-4\" hx-post=\"/experience\" hx-target=\"main\">Experience</a> <a class=\"text-sm font-medium hover:underline underline-offset-4\" hx-post=\"/projects\" hx-target=\"main\">Projects</a> <a class=\"text-sm font-medium hover:underline underline-offset-4\" hx-post=\"/contact\" hx-target=\"main\">Contact</a></nav></header>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

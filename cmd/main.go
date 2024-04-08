@@ -27,13 +27,13 @@ func main() {
 	app.GET("/", welcomeHandler.RenderWelcome)
 
 	experienceHandler := handler.ExperienceHandler{}
-	app.GET("/experience", experienceHandler.RenderExperience)
+	app.POST("/experience", experienceHandler.RenderExperience)
 
 	projectsHandler := handler.ProjectsHandler{}
-	app.GET("/projects", projectsHandler.HandleProjectRender)
+	app.POST("/projects", projectsHandler.HandleProjectRender)
 
 	contactHandler := handler.ContactHandler{}
-	app.GET("/contact", contactHandler.HandleContactRender)
+	app.POST("/contact", contactHandler.HandleContactRender)
 
 	//start server
 	app.Logger.Fatal(app.Start("localhost:3000"))
