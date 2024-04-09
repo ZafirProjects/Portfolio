@@ -6,13 +6,13 @@ templ Header() {
 			Zafir Khan
 		</a>
 		<nav class="ml-auto flex gap-4 sm:gap-6">
-			<a class="text-sm font-medium hover:underline underline-offset-4" hx-post="/experience" hx-target="main">
+			<a class="text-sm font-medium hover:underline underline-offset-4" hx-post="/experience" hx-target="main" hx-swap="transition:true">
 				Experience
 			</a>
-			<a class="text-sm font-medium hover:underline underline-offset-4" hx-post="/projects" hx-target="main">
+			<a class="text-sm font-medium hover:underline underline-offset-4" hx-post="/projects" hx-target="main" hx-swap="transition:true">
 				Projects
 			</a>
-			<a class="text-sm font-medium hover:underline underline-offset-4" hx-post="/contact" hx-target="main">
+			<a class="text-sm font-medium hover:underline underline-offset-4" hx-post="/contact" hx-target="main" hx-swap="transition:true">
 				Contact
 			</a>
 		</nav>
@@ -23,7 +23,7 @@ templ Footer() {
 	<footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
 		<p class="text-xs text-gray-500 dark:text-gray-400">© 2024 Acme Inc. All rights reserved.</p>
 		<nav class="sm:ml-auto flex gap-4 sm:gap-6">
-			<a class="text-xs hover:underline underline-offset-4" href="#"></a>
+			<a class="text-xs hover:underline underline-offset-4" href=""></a>
 		</nav>
 	</footer>
 }

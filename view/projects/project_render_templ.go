@@ -25,7 +25,7 @@ func RenderProjects(projects []model.Project, index int) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"w-full py-12 md:py-24 lg:py-32 xl:py-48 flex flex-row justify-center\"><button hx-post=\"/projects/previous\" hx-target=\"#projectCard\" class=\"hover:underline underline-offset-4\" type=\"button\">Previous</button><div class=\"flex flex-col items-center px-4 md:px-6 text-center gap-4 md:gap-10\"><div id=\"projectCard\" class=\"space-y-2\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"w-full py-12 md:py-24 lg:py-32 xl:py-48 flex flex-row justify-center\"><button hx-post=\"/projects/previous\" hx-target=\"#projectCard\" hx-swap=\"transition:true\" class=\"hover:underline underline-offset-4\" type=\"button\">Previous</button><div class=\"flex flex-col items-center px-4 md:px-6 text-center gap-4 md:gap-10\"><div id=\"projectCard\" class=\"space-y-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -33,7 +33,7 @@ func RenderProjects(projects []model.Project, index int) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><button hx-post=\"/projects/next\" hx-target=\"#projectCard\" class=\"hover:underline underline-offset-4\" type=\"button\">Next</button></section>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div><button hx-post=\"/projects/next\" hx-target=\"#projectCard\" hx-swap=\"transition:true\" class=\"hover:underline underline-offset-4\" type=\"button\">Next</button></section>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
