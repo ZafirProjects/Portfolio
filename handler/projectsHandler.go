@@ -26,6 +26,25 @@ var projectsList = []model.Project{
 	},
 }
 
+var projectIndex int = 0
+
 func (h *ProjectsHandler) HandleProjectRender(c echo.Context) error {
-	return render(c, projects.RenderProjects(projectsList))
+	projectIndex = 0
+	return render(c, projects.RenderProjects(projectsList, projectIndex))
+}
+
+func (h *ProjectsHandler) RenderNextProject(c echo.Context) error {
+	projectIndex++
+	if projectIndex%len(projectsList) == 0 {
+		projectIndex = 0
+	}
+	return render(c, projects.ProjectCard(projectsList, projectIndex))
+}
+
+func (h *ProjectsHandler) RenderPreviousProject(c echo.Context) error {
+	projectIndex--
+	if projectIndex < 0 {
+		projectIndex = len(projectsList) - 1
+	}
+	return render(c, projects.ProjectCard(projectsList, projectIndex))
 }

@@ -28,9 +28,13 @@ func main() {
 
 	experienceHandler := handler.ExperienceHandler{}
 	app.POST("/experience", experienceHandler.RenderExperience)
+	app.POST("/experience/next", experienceHandler.RenderNextExperience)
+	app.POST("/experience/previous", experienceHandler.RenderPreviousExperience)
 
 	projectsHandler := handler.ProjectsHandler{}
 	app.POST("/projects", projectsHandler.HandleProjectRender)
+	app.POST("/projects/next", projectsHandler.RenderNextProject)
+	app.POST("/projects/previous", projectsHandler.RenderPreviousProject)
 
 	contactHandler := handler.ContactHandler{}
 	app.POST("/contact", contactHandler.HandleContactRender)

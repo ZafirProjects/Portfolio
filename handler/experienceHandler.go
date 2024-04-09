@@ -23,6 +23,25 @@ var experiences = []model.Experience{
 	},
 }
 
+var experienceIndex int = 0
+
 func (h *ExperienceHandler) RenderExperience(c echo.Context) error {
-	return render(c, experience.RenderExperience(experiences))
+	experienceIndex = 0
+	return render(c, experience.RenderExperience(experiences, experienceIndex))
+}
+
+func (h *ExperienceHandler) RenderNextExperience(c echo.Context) error {
+	experienceIndex++
+	if experienceIndex%len(experiences) == 0 {
+		experienceIndex = 0
+	}
+	return render(c, experience.ExperienceCard(experiences, experienceIndex))
+}
+
+func (h *ExperienceHandler) RenderPreviousExperience(c echo.Context) error {
+	experienceIndex--
+	if experienceIndex < 0 {
+		experienceIndex = len(experiences) - 1
+	}
+	return render(c, experience.ExperienceCard(experiences, experienceIndex))
 }
