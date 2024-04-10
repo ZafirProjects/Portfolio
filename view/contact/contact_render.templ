@@ -2,21 +2,25 @@ package contact
 
 templ ContactRender() {
 	<section class="w-full py-10 md:py-20 lg:py-28 xl:py-40 items-center">
-		<div class="w-full flex flex-col items-center justify-center">
+		<div id="contact" class="w-full flex flex-col items-center justify-center">
 			<h2 class="font-semibold mb-4">Contact Me</h2>
-			<form action="#" method="POST" class="w-full max-w-[600px]">
-				<div class="space-y-2">
-					<label for="email" class="text-sm font-medium not-italic text-gray-500 dark:text-gray-400 mb-2">Email Address</label>
-					<input type="email" id="email" name="email" class="text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your email address" required/>
-				</div>
-				<div class="space-y-2 pt-4">
-					<label for="message" class="text-sm font-medium not-italic text-gray-500 dark:text-gray-400 m">Message</label>
-					<textarea id="message" name="message" rows="4" class="text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your message" required></textarea>
-				</div>
-				<div class="flex justify-end space-y-2 pt-4">
-					<button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
-				</div>
-			</form>
+			@RenderForm()
 		</div>
 	</section>
+}
+
+templ RenderForm() {
+	<form hx-post="/contact/sendEmail" hx-ext="json-enc" class="w-full max-w-[600px]">
+		<div class="space-y-2">
+			<label for="email" class="text-sm font-medium not-italic text-gray-500 dark:text-gray-400 mb-2">Email Address</label>
+			<input type="email" id="email" name="email" class="text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your email address" required/>
+		</div>
+		<div class="space-y-2 pt-4">
+			<label for="message" class="text-sm font-medium not-italic text-gray-500 dark:text-gray-400 m">Message</label>
+			<textarea id="message" name="message" rows="4" class="text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500" placeholder="Your message" required></textarea>
+		</div>
+		<div class="flex justify-end space-y-2 pt-4">
+			<button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+		</div>
+	</form>
 }

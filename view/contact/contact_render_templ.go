@@ -23,7 +23,39 @@ func ContactRender() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"w-full py-10 md:py-20 lg:py-28 xl:py-40 items-center\"><div class=\"w-full flex flex-col items-center justify-center\"><h2 class=\"font-semibold mb-4\">Contact Me</h2><form action=\"#\" method=\"POST\" class=\"w-full max-w-[600px]\"><div class=\"space-y-2\"><label for=\"email\" class=\"text-sm font-medium not-italic text-gray-500 dark:text-gray-400 mb-2\">Email Address</label> <input type=\"email\" id=\"email\" name=\"email\" class=\"text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500\" placeholder=\"Your email address\" required></div><div class=\"space-y-2 pt-4\"><label for=\"message\" class=\"text-sm font-medium not-italic text-gray-500 dark:text-gray-400 m\">Message</label> <textarea id=\"message\" name=\"message\" rows=\"4\" class=\"text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500\" placeholder=\"Your message\" required></textarea></div><div class=\"flex justify-end space-y-2 pt-4\"><button type=\"submit\" class=\"px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600\">Submit</button></div></form></div></section>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<section class=\"w-full py-10 md:py-20 lg:py-28 xl:py-40 items-center\"><div id=\"contact\" class=\"w-full flex flex-col items-center justify-center\"><h2 class=\"font-semibold mb-4\">Contact Me</h2>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = RenderForm().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></section>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		if !templ_7745c5c3_IsBuffer {
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteTo(templ_7745c5c3_W)
+		}
+		return templ_7745c5c3_Err
+	})
+}
+
+func RenderForm() templ.Component {
+	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
+		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
+		if !templ_7745c5c3_IsBuffer {
+			templ_7745c5c3_Buffer = templ.GetBuffer()
+			defer templ.ReleaseBuffer(templ_7745c5c3_Buffer)
+		}
+		ctx = templ.InitializeContext(ctx)
+		templ_7745c5c3_Var2 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var2 == nil {
+			templ_7745c5c3_Var2 = templ.NopComponent
+		}
+		ctx = templ.ClearChildren(ctx)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form hx-post=\"/contact/sendEmail\" hx-ext=\"json-enc\" class=\"w-full max-w-[600px]\"><div class=\"space-y-2\"><label for=\"email\" class=\"text-sm font-medium not-italic text-gray-500 dark:text-gray-400 mb-2\">Email Address</label> <input type=\"email\" id=\"email\" name=\"email\" class=\"text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500\" placeholder=\"Your email address\" required></div><div class=\"space-y-2 pt-4\"><label for=\"message\" class=\"text-sm font-medium not-italic text-gray-500 dark:text-gray-400 m\">Message</label> <textarea id=\"message\" name=\"message\" rows=\"4\" class=\"text-black w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500\" placeholder=\"Your message\" required></textarea></div><div class=\"flex justify-end space-y-2 pt-4\"><button type=\"submit\" class=\"px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600\">Submit</button></div></form>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

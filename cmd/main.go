@@ -38,6 +38,7 @@ func main() {
 
 	contactHandler := handler.ContactHandler{}
 	app.POST("/contact", contactHandler.HandleContactRender)
+	app.POST("/contact/sendEmail", contactHandler.HandleSendEmail)
 
 	//start server
 	app.Logger.Fatal(app.Start("localhost:3000"))
